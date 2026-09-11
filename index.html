@@ -1,3 +1,8 @@
+학력과 **지능형 멀티모달 추론 연구실(IMR Lab.)** 소속을 반영했어요. 연구실 명칭은 [공식 홈페이지](https://sites.google.com/view/imr-lab)를 기준으로 작성했습니다.
+
+**`index.html`의 연필 아이콘(Edit)을 누르고, 기존 내용을 아래 코드로 전부 교체한 뒤 `Commit changes`로 저장하세요.**
+
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -5,95 +10,247 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>한재호 | AI 연구 포트폴리오</title>
   <meta name="description"
-        content="중앙대학교 AI학과 석사과정 한재호의 연구 포트폴리오입니다.">
+        content="중앙대학교 AI학과 석사과정 한재호. 멀티모달 학습, 추론 효율화, 대규모 언어 모델에 관심을 두고 있습니다.">
+
   <style>
+    :root {
+      --background: #fafaf8;
+      --text: #252525;
+      --muted: #666;
+      --accent: #245c48;
+      --border: #deded8;
+    }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      background: #fafaf8;
-      color: #252525;
-      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Pretendard", "Malgun Gothic",
+                   "Apple SD Gothic Neo", sans-serif;
       line-height: 1.8;
       word-break: keep-all;
-      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
     }
+
     main {
-      max-width: 800px;
+      max-width: 840px;
       margin: 0 auto;
-      padding: 80px 24px;
+      padding: 72px 24px 40px;
     }
+
     header {
       padding-bottom: 32px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid var(--border);
     }
+
     h1 {
       margin: 0;
       font-size: 42px;
       letter-spacing: -1px;
+      line-height: 1.4;
     }
-    .english {
-      color: #777;
-      font-size: 20px;
-      font-weight: normal;
+
+    .english-name {
+      display: inline-block;
+      margin-left: 10px;
+      color: var(--muted);
+      font-size: 21px;
+      font-weight: 400;
       letter-spacing: 0;
     }
-    .affiliation { margin: 16px 0; color: #555; }
-    a { color: #245c48; text-underline-offset: 4px; }
-    a:hover { color: #163b2e; }
-    section { margin-top: 40px; }
-    h2 { font-size: 22px; margin-bottom: 12px; }
-    ul { padding-left: 22px; }
-    li { margin-bottom: 8px; }
-    footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #777;
+
+    .affiliation {
+      margin: 18px 0 6px;
+      font-size: 17px;
+    }
+
+    .lab-name {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-top: 22px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    section { margin-top: 42px; }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 23px;
+      letter-spacing: -0.5px;
+    }
+
+    p { margin: 0 0 12px; }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .interests li {
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
       font-size: 14px;
     }
+
+    .education-item {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .education-item:first-of-type { padding-top: 0; }
+
+    .date {
+      color: var(--muted);
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    h3 {
+      margin: 0 0 4px;
+      font-size: 17px;
+    }
+
+    .education-item p { margin: 0; }
+
+    .detail {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     @media (max-width: 600px) {
-      main { padding-top: 40px; }
+      main { padding: 40px 20px 28px; }
       h1 { font-size: 34px; }
+      .english-name { font-size: 18px; }
+      .education-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+
+    @media print {
+      body { background: #fff; }
+      main { max-width: none; padding: 0; }
+      section, .education-item { break-inside: avoid; }
+      a { color: inherit; }
     }
   </style>
 </head>
+
 <body>
   <main>
     <header>
-      <h1>한재호 <span class="english" lang="en">Jaeho Han</span></h1>
+      <h1>
+        한재호
+        <span class="english-name" lang="en">Jaeho Han</span>
+      </h1>
+
       <p class="affiliation">중앙대학교 AI학과 석사과정</p>
-      <a href="https://github.com/hanjaeho00">GitHub</a>
+      <p class="lab-name">
+        지능형 멀티모달 추론 연구실<br>
+        <span lang="en">
+          Intelligent Multimodal Reasoning (IMR) Lab.
+        </span>
+      </p>
+
+      <nav class="links" aria-label="외부 링크">
+        <a href="https://github.com/hanjaeho00">GitHub</a>
+        <a href="https://sites.google.com/view/imr-lab">연구실 홈페이지</a>
+      </nav>
     </header>
 
-    <section>
-      <h2>소개</h2>
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">소개</h2>
       <p>
         안녕하세요. 중앙대학교 AI학과 석사과정에 재학 중인
-        한재호입니다. 멀티모달 학습, 추론 경량화 및 효율화,
-        대규모 언어 모델에 관심을 두고 연구하고 있습니다.
+        한재호입니다. 지능형 멀티모달 추론 연구실(IMR Lab.)에서
+        연구하고 있습니다.
+      </p>
+      <p>
+        멀티모달 학습, 추론 경량화 및 효율화,
+        대규모 언어 모델(LLM)에 관심을 두고 있습니다.
       </p>
     </section>
 
-    <section>
-      <h2>연구 관심 분야</h2>
-      <ul>
-        <li>멀티모달 학습 (Multimodal Learning)</li>
-        <li>추론 경량화 및 효율화 (Efficient Inference)</li>
-        <li>대규모 언어 모델 (Large Language Models)</li>
+    <section aria-labelledby="research-title">
+      <h2 id="research-title">연구 관심 분야</h2>
+      <ul class="interests">
+        <li>멀티모달 학습 · Multimodal Learning</li>
+        <li>추론 경량화 및 효율화 · Efficient Inference</li>
+        <li>대규모 언어 모델 · LLMs</li>
       </ul>
     </section>
 
-    <section>
-      <h2>학력</h2>
-      <p>
-        <strong>중앙대학교</strong><br>
-        AI학과 석사과정 · 재학 중
-      </p>
+    <section aria-labelledby="education-title">
+      <h2 id="education-title">학력</h2>
+
+      <div class="education-item">
+        <div class="date">
+          <time datetime="2025-09">2025.09</time>
+          –
+          <time datetime="2027-02">2027.02</time>
+          <br>졸업 예정
+        </div>
+        <div>
+          <h3>중앙대학교 대학원</h3>
+          <p>AI학과 석사과정</p>
+          <p class="detail">세부전공: AI응용전공</p>
+        </div>
+      </div>
+
+      <div class="education-item">
+        <div class="date">
+          <time datetime="2022-03">2022.03</time>
+          –
+          <time datetime="2025-08">2025.08</time>
+        </div>
+        <div>
+          <h3>중앙대학교</h3>
+          <p>AI학과 학사 졸업</p>
+        </div>
+      </div>
     </section>
 
-    <!-- 프로젝트, 논문, 경력, CV는 내용을 정리한 뒤 추가합니다. -->
+    <!-- 논문, 프로젝트, 기술 역량, CV 링크는 추후 추가 -->
 
     <footer>한재호 · AI 연구 포트폴리오</footer>
   </main>
 </body>
 </html>
+```
